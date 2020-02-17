@@ -79,7 +79,7 @@ function getRule(req: Request, res: Response, u: string) {
     current: parseInt(`${params.currentPage}`, 10) || 1,
   };
 
-  return res.json(result);
+  res.json(result);
 }
 
 function postRule(req: Request, res: Response, u: string, b: Request) {
@@ -117,7 +117,7 @@ function postRule(req: Request, res: Response, u: string, b: Request) {
           progress: Math.ceil(Math.random() * 100),
         };
         tableListDataSource.unshift(newRule);
-        return res.json(newRule);
+        res.json(newRule);
       })();
       return;
 
@@ -131,7 +131,7 @@ function postRule(req: Request, res: Response, u: string, b: Request) {
           }
           return item;
         });
-        return res.json(newRule);
+        res.json(newRule);
       })();
       return;
     default:
